@@ -4,6 +4,8 @@ import Navbar from "./components/Navbar";
 import Body from "./components/Body";
 import LatestNews from "./components/LatestNews";
 import LatestEvent from "./components/LatestEvent";
+import Map from "./components/Map";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -38,6 +40,10 @@ export const appRouter = createBrowserRouter([
       {
         path: "https://vanviharnationalpark.org/events/events",
         element: <LatestEvent />,
+      },
+      {
+        path: "/location",
+        element: <Map />,
       },
     ],
   },

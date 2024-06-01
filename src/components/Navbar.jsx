@@ -60,9 +60,12 @@ const Navbar = () => {
         </div>
 
         <ul className="flex justify-evenly items-center h-[8vh] bg-gradient-to-r from-green-800 via-green-700 to-yellow-500">
-          <li className="text-white font-font-poppins font-semibold cursor-pointer">
-            HOME
-          </li>
+          <Link to="/">
+            <li className="text-white font-font-poppins font-semibold cursor-pointer">
+              HOME
+            </li>
+          </Link>
+
           <li className="text-white font-font-poppins font-semibold cursor-pointer">
             {" "}
             ABOUT
@@ -70,6 +73,12 @@ const Navbar = () => {
           <li className="text-white font-font-poppins font-semibold cursor-pointer">
             TOURIST INFORMATION
           </li>
+          <Link to="/location">
+            <li className="text-white font-font-poppins font-semibold cursor-pointer">
+              MAP
+            </li>
+          </Link>
+
           <li className="text-white font-font-poppins font-semibold cursor-pointer">
             MANAGEMENT
           </li>
