@@ -5,13 +5,19 @@ import Body from "./components/Body";
 import LatestNews from "./components/LatestNews";
 import LatestEvent from "./components/LatestEvent";
 import Map from "./components/Map";
-import Footer from "./components/Footer";
+import { LoadScript } from "@react-google-maps/api";
 
 const App = () => {
   return (
     <>
       <Navbar />
-      <Outlet />
+      <LoadScript
+        googleMapsApiKey="AIzaSyBn2U4uuM6cYvUiqtpv9njvPWhYH7veyXo"
+        libraries={["places"]}
+        // libraries={["places"]}
+      >
+        <Outlet />
+      </LoadScript>
     </>
   );
 };
