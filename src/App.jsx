@@ -6,6 +6,7 @@ import LatestNews from "./components/LatestNews";
 import LatestEvent from "./components/LatestEvent";
 import Map from "./components/Map";
 import { LoadScript } from "@react-google-maps/api";
+import { ChakraProvider } from "@chakra-ui/react";
 
 const App = () => {
   return (
@@ -49,7 +50,11 @@ export const appRouter = createBrowserRouter([
       },
       {
         path: "/location",
-        element: <Map />,
+        element: (
+          <ChakraProvider>
+            <Map />
+          </ChakraProvider>
+        ),
       },
     ],
   },

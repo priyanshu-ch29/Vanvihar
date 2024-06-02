@@ -62,44 +62,15 @@ const Map = () => {
       <h1 className=" font-font-poppins font-bold text-[30px] text-center m-10 text-green-800">
         "Van Vihar National Park & Zoo"
       </h1>
-      <Flex position="relative" flexDirection="column" alignItems="center">
-        <Box position="absolute">
-          <GoogleMap
-            center={center}
-            zoom={15}
-            mapContainerStyle={{ width: "100vw", height: "100vh" }}
-            onLoad={(map) => setMap(map)}
-          >
-            <Marker
-              position={center}
-              onClick={() => setSelectedMarker(center)}
-            />
-            {selectedMarker && (
-              <InfoWindow
-                position={{
-                  lat: selectedMarker.lat,
-                  lng: selectedMarker.lng,
-                }}
-                onCloseClick={() => setSelectedMarker(null)}
-              >
-                <div>
-                  <h1>Place: {selectedMarker.name}</h1>
-                  <h1>Latitude: {selectedMarker.lat}</h1>
-                  <h1>Longitude: {selectedMarker.lng}</h1>
-                </div>
-              </InfoWindow>
-            )}
-            {directionsResponse && (
-              <DirectionsRenderer directions={directionsResponse} />
-            )}
-          </GoogleMap>
-        </Box>
+      <Flex flexDirection="column" alignItems="center">
         <Box
+          border="1px"
+          borderColor="black"
           p={4}
           borderRadius="lg"
           m={4}
           bgColor="white"
-          shadow=""
+          boxShadow="lg"
           minW="container.md"
           zIndex="1"
         >
@@ -144,6 +115,35 @@ const Map = () => {
           </HStack>
         </Box>
       </Flex>
+
+      <Box>
+        <GoogleMap
+          center={center}
+          zoom={15}
+          mapContainerStyle={{ width: "98.9vw", height: "100vh" }}
+          onLoad={(map) => setMap(map)}
+        >
+          <Marker position={center} onClick={() => setSelectedMarker(center)} />
+          {selectedMarker && (
+            <InfoWindow
+              position={{
+                lat: selectedMarker.lat,
+                lng: selectedMarker.lng,
+              }}
+              onCloseClick={() => setSelectedMarker(null)}
+            >
+              <div>
+                <h1>Place: {selectedMarker.name}</h1>
+                <h1>Latitude: {selectedMarker.lat}</h1>
+                <h1>Longitude: {selectedMarker.lng}</h1>
+              </div>
+            </InfoWindow>
+          )}
+          {directionsResponse && (
+            <DirectionsRenderer directions={directionsResponse} />
+          )}
+        </GoogleMap>
+      </Box>
     </>
   );
 };
