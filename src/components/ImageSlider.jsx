@@ -43,7 +43,7 @@ const ImageSlider = () => {
                   className="absolute text-2xl bottom-[170px] text-white left-5 cursor-pointer"
                   onClick={prevImage}
                 />
-                <img src={val.imageUrl} className=" duration-300 ease-in-out" />
+                <img src={val.imageUrl} className="" />
                 <FaCircleArrowRight
                   className="absolute right-5 bottom-[170px] text-2xl text-white cursor-pointer"
                   onClick={nextImage}
