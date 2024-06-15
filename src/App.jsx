@@ -15,7 +15,6 @@ const App = () => {
       <LoadScript
         googleMapsApiKey="AIzaSyBn2U4uuM6cYvUiqtpv9njvPWhYH7veyXo"
         libraries={["places"]}
-        // libraries={["places"]}
       >
         <Outlet />
       </LoadScript>
